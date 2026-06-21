@@ -7,49 +7,6 @@
 <title>UK Metascience Unit</title>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-#gate {
-  position: fixed; inset: 0; z-index: 9999;
-  background: #edf0ec;
-  display: flex; align-items: center; justify-content: center;
-}
-#gate-box {
-  background: #fff; border: 1px solid #c8d4d2; border-radius: 6px;
-  padding: 2.5rem 2.5rem 2rem; max-width: 360px; width: 90%;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  font-family: 'Poppins', sans-serif;
-}
-#gate svg { height: 52px; width: auto; display: block; margin: 0 auto 1.75rem; }
-#gate label {
-  display: block; font-size: 14px; font-weight: 600;
-  color: #3c5856; margin-bottom: 0.5rem; letter-spacing: 0.02em;
-}
-#gate input {
-  width: 100%; padding: 0.65rem 0.9rem;
-  border: 1px solid #c8d4d2; border-radius: 4px;
-  font-family: 'Poppins', sans-serif; font-size: 15px;
-  color: #1a2420; outline: none;
-  transition: border-color 0.15s;
-}
-#gate input:focus { border-color: #3c5856; }
-#gate button {
-  margin-top: 1rem; width: 100%;
-  background: #3c5856; color: #fff; border: none;
-  border-radius: 4px; padding: 0.7rem 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px; font-weight: 600; cursor: pointer;
-  transition: background 0.15s;
-}
-#gate button:hover { background: #2e4543; }
-#gate-error {
-  margin-top: 0.75rem; font-size: 13.5px;
-  color: #b94040; text-align: center; min-height: 1.2em;
-}
-#gate-note {
-  margin-top: 1.25rem; font-size: 12.5px;
-  color: #6b7b78; text-align: center; line-height: 1.5;
-}
-</style>
-<style>
 :root {
   --bg: #edf0ec;
   --teal-dark: #3c5856;
@@ -332,18 +289,6 @@ footer a { color: rgba(255,255,255,0.9); }
 </head>
 <body>
 
-<!-- PASSWORD GATE -->
-<div id="gate">
-  <div id="gate-box">
-    <svg viewBox="0 0 367.319 340.676" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#gc)"><path fill="none" stroke-width="10.697" stroke-linecap="round" stroke-linejoin="miter" stroke="#3c5856" stroke-opacity="1" stroke-miterlimit="4" d="M -0.0014924 0.00129447 C 23.690789 -38.754018 66.398728 -64.618287 115.145185 -64.618287 C 189.63068 -64.618287 250.01195 -4.237017 250.01195 70.244564 C 250.01195 144.726145 189.63068 205.107415 115.145185 205.107415 C 71.31016 205.107415 32.35526 184.1898 7.723741 151.793912 " transform="matrix(0.998149, 0, 0, -0.998149, 74.497583, 240.509105)"/></g><defs><clipPath id="gc"><path d="M 37.570312 30.441406 L 329.382812 30.441406 L 329.382812 310.34375 L 37.570312 310.34375 Z"/></clipPath></defs><text x="183" y="175" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="38" font-weight="300" fill="#3c5856">UK</text><text x="183" y="220" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="38" font-weight="700" fill="#3c5856">Metascience</text><text x="183" y="258" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="38" font-weight="300" fill="#3c5856">Unit</text></svg>
-    <label for="gate-input">Password</label>
-    <input type="password" id="gate-input" placeholder="Enter password" autocomplete="current-password" onkeydown="if(event.key==='Enter') checkPassword()">
-    <button onclick="checkPassword()">Enter</button>
-    <div id="gate-error"></div>
-    <p id="gate-note">Beta preview — access by invitation only.</p>
-  </div>
-</div>
-
 <!-- MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeModalOnOverlay(event)">
   <div class="modal-box">
@@ -398,7 +343,7 @@ footer a { color: rgba(255,255,255,0.9); }
     <button onclick="showPage('funding')">Funding</button>
     <button onclick="showPage('portfolio')">Portfolio</button>
     <button onclick="showPage('team')">Team</button>
-    <button onclick="showPage('blog')">Updates + Explainers</button>
+    <button onclick="showPage('blog')">Updates</button>
   </nav>
 </header>
 
@@ -636,63 +581,56 @@ footer a { color: rgba(255,255,255,0.9); }
   </div>
 </div>
 
-<!-- BLOG -->
+<!-- UPDATES -->
 <div id="page-blog" class="page">
+  <div class="page-header"><h1>Updates</h1></div>
 
-  <!-- BLOG LIST VIEW -->
-  <div id="blog-list">
-    <div class="page-header"><h1>Updates + Explainers</h1></div>
-    <div class="blog-content">
-      <div class="blog-list-item" onclick="openPost('scientometrics')">
-        <div>
-          <div class="blog-post-title">Why are the Metascience Unit investing in Scientometrics?</div>
-          <div class="blog-post-date">14 May 2026</div>
-        </div>
-        <span class="blog-arrow">&#8594;</span>
+  <div id="blog-list" class="blog-content">
+    <div class="blog-list-item" onclick="openPost('scientometrics')">
+      <div>
+        <div class="blog-post-title">Why are the Metascience Unit investing in Scientometrics?</div>
+        <div class="blog-post-date">14 May 2026</div>
       </div>
-      <div class="blog-list-item" onclick="openPost('peer-review-ai')">
-        <div>
-          <div class="blog-post-title">Peer Review in an AI Age</div>
-          <div class="blog-post-date">14 May 2026</div>
-        </div>
-        <span class="blog-arrow">&#8594;</span>
+      <span class="blog-arrow">→</span>
+    </div>
+    <div class="blog-list-item" onclick="openPost('peer-review-ai')">
+      <div>
+        <div class="blog-post-title">Peer Review in an AI Age</div>
+        <div class="blog-post-date">14 May 2026</div>
       </div>
-      <div class="blog-list-item" onclick="openPost('novelty-indicators')">
-        <div>
-          <div class="blog-post-title">Congratulations to [Novelty indicators]</div>
-          <div class="blog-post-date">14 May 2026</div>
-        </div>
-        <span class="blog-arrow">&#8594;</span>
+      <span class="blog-arrow">→</span>
+    </div>
+    <div class="blog-list-item" onclick="openPost('novelty-indicators')">
+      <div>
+        <div class="blog-post-title">Congratulations to [Novelty indicators]</div>
+        <div class="blog-post-date">14 May 2026</div>
       </div>
-      <div class="blog-list-item" onclick="openPost('ai-research-survey')">
-        <div>
-          <div class="blog-post-title">Introducing: National AI in Research Survey</div>
-          <div class="blog-post-date">14 May 2026</div>
-        </div>
-        <span class="blog-arrow">&#8594;</span>
+      <span class="blog-arrow">→</span>
+    </div>
+    <div class="blog-list-item" onclick="openPost('ai-research-survey')">
+      <div>
+        <div class="blog-post-title">Introducing: National AI in Research Survey</div>
+        <div class="blog-post-date">14 May 2026</div>
       </div>
-      <div class="blog-list-item" onclick="openPost('philosophy-scientometrics')">
-        <div>
-          <div class="blog-post-title">Introducing: Philosophy of Scientometrics WG</div>
-          <div class="blog-post-date">14 May 2026</div>
-        </div>
-        <span class="blog-arrow">&#8594;</span>
+      <span class="blog-arrow">→</span>
+    </div>
+    <div class="blog-list-item" onclick="openPost('philosophy-scientometrics')">
+      <div>
+        <div class="blog-post-title">Introducing: Philosophy of Scientometrics WG</div>
+        <div class="blog-post-date">14 May 2026</div>
       </div>
+      <span class="blog-arrow">→</span>
     </div>
   </div>
 
-  <!-- INDIVIDUAL POST VIEWS -->
-  <div id="blog-post-view" style="display:none">
-    <div class="page-header" style="display:flex;align-items:center;gap:1rem;">
-      <button class="blog-back-btn" onclick="closeBlogPost()">&#8592; Updates + Explainers</button>
-      <h1 id="blog-post-view-title" style="font-size:1.5rem;"></h1>
+  <div id="blog-post-view" class="blog-content" style="display:none;">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; gap:1rem;">
+      <h2 id="blog-post-view-title" style="font-family:'Libre Baskerville',serif; font-size:1.45rem; font-weight:700; color:var(--teal-dark); line-height:1.3;"></h2>
+      <button class="blog-back-btn" onclick="closeBlogPost()">← Back</button>
     </div>
-    <div class="blog-content">
-      <div class="blog-post-date" id="blog-post-view-date" style="margin-bottom:1.5rem;font-size:13px;color:var(--text-light);"></div>
-      <div id="blog-post-view-body"></div>
-    </div>
+    <div id="blog-post-view-date" style="font-size:13px; color:var(--text-light); margin-bottom:2rem;"></div>
+    <div id="blog-post-view-body"></div>
   </div>
-
 </div>
 
 <footer>
@@ -843,25 +781,6 @@ function closeBlogPost() {
 window.addEventListener('hashchange', route);
 window.addEventListener('DOMContentLoaded', route);
 
-// ── PASSWORD GATE ──
-const CORRECT = 'metascience2025';
-(function() {
-  if (sessionStorage.getItem('ms_auth') === '1') {
-    document.getElementById('gate').style.display = 'none';
-  }
-})();
-function checkPassword() {
-  const val = document.getElementById('gate-input').value;
-  if (val === CORRECT) {
-    sessionStorage.setItem('ms_auth', '1');
-    document.getElementById('gate').style.display = 'none';
-  } else {
-    const err = document.getElementById('gate-error');
-    err.textContent = 'Incorrect password — please try again.';
-    document.getElementById('gate-input').value = '';
-    document.getElementById('gate-input').focus();
-  }
-}
 </script>
 </body>
 </html>
