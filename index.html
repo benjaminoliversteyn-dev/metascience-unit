@@ -586,6 +586,13 @@ footer a { color: rgba(255,255,255,0.9); }
   <div class="page-header"><h1>Updates</h1></div>
 
   <div id="blog-list" class="blog-content">
+    <div class="blog-list-item" onclick="openPost('novelty-challenge')">
+      <div>
+        <div class="blog-post-title">Metascience Global Novelty Indicators Challenge</div>
+        <div class="blog-post-date">1 June 2026</div>
+      </div>
+      <span class="blog-arrow">→</span>
+    </div>
     <div class="blog-list-item" onclick="openPost('scientometrics')">
       <div>
         <div class="blog-post-title">Why are the Metascience Unit investing in Scientometrics?</div>
@@ -597,6 +604,13 @@ footer a { color: rgba(255,255,255,0.9); }
       <div>
         <div class="blog-post-title">Peer Review in an AI Age</div>
         <div class="blog-post-date">14 May 2026</div>
+      </div>
+      <span class="blog-arrow">→</span>
+    </div>
+    <div class="blog-list-item" onclick="openPost('year-in-metascience')">
+      <div>
+        <div class="blog-post-title">A Year in Metascience – 2025</div>
+        <div class="blog-post-date">1 June 2025</div>
       </div>
       <span class="blog-arrow">→</span>
     </div>
@@ -645,6 +659,16 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 
 // ── BLOG POSTS DATA ──
 const BLOG_POSTS = {
+  'novelty-challenge': {
+    title: 'Metascience Global Novelty Indicators Challenge',
+    date: '1 June 2026',
+    body: `<p>Please visit our dedicated microsite for more information about our recent challenge prize for computational indicators of scientific novelty: <a href="https://challengeworks.org/challenge-prizes/metascience-novelty-indicators/" target="_blank" rel="noopener">challengeworks.org/challenge-prizes/metascience-novelty-indicators</a>.</p>`
+  },
+  'year-in-metascience': {
+    title: 'A Year in Metascience – 2025',
+    date: '1 June 2025',
+    body: `<p>Please visit <a href="https://www.gov.uk/government/publications/a-year-in-metascience-2025" target="_blank" rel="noopener">gov.uk/government/publications/a-year-in-metascience-2025</a> to read our inaugural report outlining the first year of the Metascience Unit, including content on DPR, and a useful annex on the past, present and future of UK Metascience.</p>`
+  },
   'scientometrics': {
     title: 'Why are the Metascience Unit investing in Scientometrics?',
     date: '14 May 2026',
